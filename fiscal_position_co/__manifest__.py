@@ -32,6 +32,6 @@
         'views/account_fiscal_position_view.xml',
         'views/product_concept_type.xml',
         'views/product_view.xml',
-        'views/account_move_view.xml',
+        #'views/account_move_view.xml',
     ],
 }
