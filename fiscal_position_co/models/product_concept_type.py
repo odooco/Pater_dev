@@ -1,29 +1,10 @@
 # -*- coding: utf-8 -*-
 
-
-from odoo import fields, models, api, _
-from odoo.exceptions import ValidationError,Warning
-
-
-PARTNER_TYPES = [
-    ('employee', 'Employee'),
-    ('layoffs', 'Found Layoffs'),
-    ('eps', 'EPS'),
-    ('afp', 'AFP'),
-    ('unemployment', 'Unemployment Fund'),
-    ('arl', 'ARL'),
-    ('afc', 'AFC'),
-    ('compensation', 'Compensation'),
-    ('voluntary', 'Voluntary Contribution'),
-  
-    ]
+from odoo import models, fields, api
+from odoo.exceptions import AccessError, UserError, RedirectWarning, ValidationError, Warning
 
 
-class HrSalaryRule(models.Model):
-    _inherit = 'hr.salary.rule'
+class ProductConceptType(models.Model):
+    _name = 'product.concept.type'
 
-
-    partner_type = fields.Selection(selection=PARTNER_TYPES, string='Accounting partner')
-
-
-#
+    name = fields.Char(string='Concept Type')

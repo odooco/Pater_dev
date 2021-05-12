@@ -11,17 +11,12 @@
 #################################################################################################################
 
 
+# -*- coding: utf-8 -*-
+
 from odoo import models, fields, api
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
-    _description = 'Contactos'
 
-    is_eps = fields.Boolean(string="Es EPS")
-    is_afp = fields.Boolean(string="Es Fondo de Pensiones")
-    is_afc = fields.Boolean(string="Es Fondo de Cesantías")
-    is_arl = fields.Boolean(string="Es Aseguradora de Riesgos Laborales")
-    is_compensation_box = fields.Boolean(string="Es Caja de compensación")
-    
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
 
- 
+    concept_type_id = fields.Many2one('product.concept.type', string='Concept Type')

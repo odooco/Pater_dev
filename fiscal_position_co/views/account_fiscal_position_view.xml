@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="account_fiscal_position_form" model="ir.ui.view">
+            <field name="name">account.fiscal.position.form</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tax_ids']/tree/field[@name='tax_src_id']" position="after">
+                    <field name="tax_comparation"/>
+                    <field name="tax_comparation_value" required="True"/>
+                    <field name="product_type" required="True"/>
+                </xpath>
+                <xpath expr="//field[@name='tax_ids']/form/group/field[@name='tax_src_id']" position="after">
+                    <field name="tax_comparation"/>
+                    <field name="tax_comparation_value" required="True"/>
+                    <field name="product_type" required="True"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
